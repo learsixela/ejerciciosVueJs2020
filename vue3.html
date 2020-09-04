@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show - if - else</title>
+</head>
+<body>
+    <div id="app">
+        <button  v-on:click="cambiarOcultar"> Botón Ocultar</button>
+        <button  v-on:click="cambiarMostrar"> Botón Mostrar</button>
+        <button  v-on:click="cambiarValor"> Botón cambiar valor</button>
+        <br>
+        <!-- si es es verdadero o True se muestra-->
+        <p v-show="mostrar" >
+            este es un parrafo que se está mostrando
+        </p>
+
+        <br>
+        <pre>{{$data}}</pre>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            mostrar: true,
+        },
+        methods: {
+            cambiarOcultar(){
+                this.mostrar = false;
+            },
+            cambiarMostrar(){
+                this.mostrar = true;
+            },
+            cambiarValor(){
+                this.mostrar = !this.mostrar;
+            },
+
+        },
+    })
+</script>
+</html>
