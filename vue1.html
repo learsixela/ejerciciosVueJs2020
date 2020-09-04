@@ -1,0 +1,54 @@
+<html> 
+  <head> 
+    <title>Hola Vue</title> 
+  </head> 
+  <body>
+  	<div id="app"> 
+
+  		<h1>¡Hola clase!</h1> 
+      <br>
+        input 1 : <input v-model="mensaje"/>
+      <br>
+      input 2 : <input v-model="numero1"/>
+      <br>
+      input 3 : <input v-model="sumar"/>
+      <br>
+      <p>asdd
+      fgh
+      jkl</p>
+      <pre>
+      1234
+      5678
+      90</pre>
+      {{mensaje}} - {{numero1}} - {{presente}} -{{sumar}} - {{restar}}-
+      <br>
+      {{titulos}}
+      <br>
+      {{titulos[0]}}
+      <br>
+      {{titulos[0].titulo}}
+      <br>
+      <pre>{{$data}}</pre>
+
+    </div> 
+
+    <div id="gato">
+      <p>esto no se ve afectado por vuejs</p>
+    </div>
+
+  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+<script> 
+  new Vue({
+  	el: '#app', 
+    data:{
+      mensaje:'Esto es una variable en vuejs',
+      numero1: 1,
+      presente: false,
+      sumar:null,
+      restar:'',
+      titulos: [{titulo: 'titulo 1'}, {titulo: 'titulo 2'}], 
+    },
+  }) 
+</script> 
+</html>
