@@ -10,13 +10,18 @@
         <br>
         <label>input:</label><br>
         <input v-model="mensaje" type=""/><br>
-        <label>input 1:</label><br> <input v-model="numero1" type="number"/>
-        numero 2  <input v-model="numero2" type="number"/>
+        <label>input 1:</label><br>
+        <input v-model="numero1" type="number"/>
+        numero 2
+        <input v-model="numero2" type="number"/>
         <br>
-        <button v-on:click="sumar"> Sumar</button>
+        <button v-on:click="sumar">Boton Sumar</button>
         <br>
-        <button @click="restar"> Restar</button>
-
+        <button @click="restar">Boton Restar</button>
+        <br>
+        <button v-on:click="dividir(numero1,numero2)"> Boton Dividir</button>
+        <br>
+        <button @click="multiplicar(numero1,numero2)">Boton Multiplicar</button>
         <br>
         <pre>{{$data}}</pre>
     </div>
@@ -32,12 +37,14 @@
             total: 0,
             totalSuma: 0,
             totalResta: 0,
+            totalMultiplicar: 0,
+            totalDividir: 0,
 
         },
         methods: {
             sumar: function (){
                 console.log('funcion sumar');
-                this.totalSuma = this.numero1 + this.numero2 + this.totalResta
+                this.totalSuma = this.numero1 + this.numero2
             },
             restar(){
                 console.log('funcion restar');
@@ -45,12 +52,18 @@
                 console.log(this.totalResta);
             },
             multiplicar(a,b){
-
+                this.totalMultiplicar = a*b;
             },
-            dividir(a,b){
-
+            dividir(x,z){
+                if(this.numero2==0){
+                    console.log('no se puede dividir por cero');
+                }
+                if(z !=0 ){
+                    this.totalDividir = x/z;
+                }else{
+                    console.log('no se puede dividir por cero');
+                }
             },
-
         },
     })
 </script>
